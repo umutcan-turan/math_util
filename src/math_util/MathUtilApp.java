@@ -27,7 +27,7 @@ class IsPrimeApp {
 	
 	public static void printHelpMsg()
 	{
-		System.out.println("Keep entering integers. Enter 0 to return to menu:");
+		System.out.println("> Keep entering integers. Enter 0 to return to menu:");
 	}
 	
 	public static void printResult(long number, boolean isprime)
