@@ -24,6 +24,11 @@ class IsPrimeApp {
 		while ((number = kb.nextLong())!= 0)
 			printResult(number, Utils.isPrime(number));
 	}
+	
+	public static void printHelpMsg()
+	{
+		System.out.println("Keep entering integers. Enter 0 to return to menu:");
+	}
 }
 
 class Utils {
