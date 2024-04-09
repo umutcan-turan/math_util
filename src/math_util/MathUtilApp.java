@@ -29,6 +29,14 @@ class IsPrimeApp {
 	{
 		System.out.println("Keep entering integers. Enter 0 to return to menu:");
 	}
+	
+	public static void printResult(long number, boolean isprime)
+	{
+		if (isprime)
+			System.out.printf("> %d is a prime number.%n", number);
+		else
+			System.out.printf("> %d is not a prime number.%n", number);
+	}
 }
 
 class Utils {
