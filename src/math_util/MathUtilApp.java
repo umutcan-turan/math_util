@@ -93,7 +93,7 @@ class FactorsApp {
 	{
 		for (long i = 1; i * i <= number; i++)
 			if (number % i == 0)
-				System.out.printf("%d = %d * %d%n", number, i, number / i);
+				Utils.printFactor(number, i);
 	}
 }
 
@@ -126,5 +126,10 @@ class Utils {
 	public static void printHelpMsg()
 	{
 		System.out.println("> Keep entering integers. Enter 0 to return to menu:");
+	}
+	
+	public static void printFactor(long number, long factor)
+	{
+		System.out.printf("%d = %d * %d%n", number, factor, number / factor);
 	}
 }
