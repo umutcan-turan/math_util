@@ -42,14 +42,9 @@ class IsPrimeApp {
 	{
 		long number;
 		
-		printHelpMsg();
+		Utils.printHelpMsg();
 		while ((number = kb.nextLong())!= 0)
 			printResult(number, Utils.isPrime(number));
-	}
-	
-	public static void printHelpMsg()
-	{
-		System.out.println("> Keep entering integers. Enter 0 to return to menu:");
 	}
 	
 	public static void printResult(long number, boolean isprime)
@@ -85,5 +80,10 @@ class Utils {
 		while (!isPrime(++number))
 			;
 		return number;
+	}
+	
+	public static void printHelpMsg()
+	{
+		System.out.println("> Keep entering integers. Enter 0 to return to menu:");
 	}
 }
