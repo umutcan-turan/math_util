@@ -11,7 +11,28 @@ class App {
 	public static void run()
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
+		printWelcomeMsg();
+		{
+			int mode;
+			do {
+				printMenu();
+				mode = kb.nextInt();
+				if (mode == 1)
+					IsPrimeApp.run(kb);
+			} while (mode != 0)
+		}
 		kb.close();
+	}
+	
+	public static void printWelcomeMsg()
+	{
+		System.out.println("\tWelcome to math_util!");
+	}
+	
+	public static void printMenu()
+	{
+		System.out.println("1) Check if an integer is a prime number.");
+		System.out.println("0) Quit");
 	}
 }
 
