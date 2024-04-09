@@ -56,6 +56,17 @@ class IsPrimeApp {
 	}
 }
 
+class FactorsApp {
+	public static void run(java.util.Scanner kb)
+	{
+		long number;
+		
+		Utils.printHelpMsg();
+		while ((number = kb.nextLong()) != 0)
+			printFactors(number);
+	}
+}
+
 class Utils {
 	public static boolean isPrime(long number)
 	{
