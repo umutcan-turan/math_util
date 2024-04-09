@@ -25,4 +25,11 @@ class Utils {
 				return false;
 		return true;
 	}
+	
+	public static long nextPrime(long number)
+	{
+		while (!isPrime(++number))
+			;
+		return number;
+	}
 }
