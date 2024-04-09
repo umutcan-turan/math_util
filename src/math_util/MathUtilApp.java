@@ -10,6 +10,7 @@ class MathUtilApp {
 class App {
 	public static void run()
 	{
+		// TODO: Exception handling on bad input
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		printWelcomeMsg();
 		{
@@ -19,7 +20,7 @@ class App {
 				mode = kb.nextInt();
 				if (mode == 1)
 					IsPrimeApp.run(kb);
-			} while (mode != 0)
+			} while (mode != 0);
 		}
 		kb.close();
 	}
