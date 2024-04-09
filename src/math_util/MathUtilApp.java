@@ -24,6 +24,8 @@ class App {
 					NextPrimeApp.run(kb);
 				if (mode == 3)
 					FactorsApp.run(kb);
+				if (mode == 4)
+					SquareFactorsApp.run(kb);
 			} while (mode != 0);
 		}
 		kb.close();
@@ -39,6 +41,7 @@ class App {
 		System.out.println("1) Check if an integer is a prime number.");
 		System.out.println("2) Get the smallest prime number greater than given integer.");
 		System.out.println("3) Display an integer's factors.");
+		System.out.println("4) Display an integer's factors which happen to be perfect squares.");
 		System.out.println("0) Quit");
 	}
 }
@@ -97,6 +100,23 @@ class FactorsApp {
 	}
 }
 
+class SquareFactorsApp {
+	public static void run(java.util.Scanner kb)
+	{
+		long number;
+		
+		Utils.printHelpMsg();
+		while ((number = kb.nextLong()) != 0)
+			printSquareFactors(number);
+	}
+	
+	public static void printSquareFactors(long number)
+	{
+		for (long i = 2; Math.pow(i, 4) <= number; i++)
+			if (number % (i * i) == 0)
+				Utils.printFactor(number, i * i);
+	}
+}
 class Utils {
 	public static boolean isPrime(long number)
 	{
