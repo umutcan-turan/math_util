@@ -3,9 +3,13 @@ package math_util;
 class MathUtilApp {
 	public static void main(String [] args)
 	{
+	}
+}
+
+class App {
+	public static void run()
+	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
-		long a = IOUtils.getLong(kb);
-		System.out.println(a);
 		kb.close();
 	}
 }
@@ -33,16 +37,6 @@ class Utils {
 	{
 		while (!isPrime(++number))
 			;
-		return number;
-	}
-}
-
-class IOUtils {
-	public static long getLong(java.util.Scanner kb)
-	{
-		// TODO: Properly handle creating and destroying objects
-		// TODO: Exception handling
-		long number = kb.nextLong();
 		return number;
 	}
 }
