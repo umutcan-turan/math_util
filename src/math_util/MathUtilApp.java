@@ -65,6 +65,13 @@ class FactorsApp {
 		while ((number = kb.nextLong()) != 0)
 			printFactors(number);
 	}
+	
+	public static void printFactors(long number)
+	{
+		for (long i = 1; i * i <= number; i++)
+			if (number % i == 0)
+				System.out.printf("%d = %d * %d%n", number, i, number / i);
+	}
 }
 
 class Utils {
