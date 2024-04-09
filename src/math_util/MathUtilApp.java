@@ -20,6 +20,8 @@ class App {
 				mode = kb.nextInt();
 				if (mode == 1)
 					IsPrimeApp.run(kb);
+				if (mode == 2)
+					FactorsApp.run(kb);
 			} while (mode != 0);
 		}
 		kb.close();
@@ -33,6 +35,7 @@ class App {
 	public static void printMenu()
 	{
 		System.out.println("1) Check if an integer is a prime number.");
+		System.out.println("2) See an integer's factors.");
 		System.out.println("0) Quit");
 	}
 }
