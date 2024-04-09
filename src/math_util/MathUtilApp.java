@@ -20,12 +20,14 @@ class App {
 				mode = kb.nextInt();
 				if (mode == 1)
 					IsPrimeApp.run(kb);
-				if (mode == 2)
+				else if (mode == 2)
 					NextPrimeApp.run(kb);
-				if (mode == 3)
+				else if (mode == 3)
 					FactorsApp.run(kb);
-				if (mode == 4)
+				else if (mode == 4)
 					SquareFactorsApp.run(kb);
+				else if (mode == 5)
+					PrimeFactorsApp.run(kb);
 			} while (mode != 0);
 		}
 		kb.close();
@@ -42,6 +44,7 @@ class App {
 		System.out.println("2) Get the smallest prime number greater than given integer.");
 		System.out.println("3) Display an integer's factors.");
 		System.out.println("4) Display an integer's factors which happen to be perfect squares.");
+		System.out.println("5) Display the prime factorization of an integer.");
 		System.out.println("0) Quit");
 	}
 }
@@ -117,6 +120,42 @@ class SquareFactorsApp {
 				Utils.printFactor(number, i * i);
 	}
 }
+
+class PrimeFactorsApp {
+	public static void run(java.util.Scanner kb)
+	{
+		long number;
+		
+		Utils.printHelpMsg();
+		while ((number = kb.nextLong()) != 0)
+			printPrimeFactors(number);
+	}
+	
+	public static void printPrimeFactors(long number)
+	{
+		boolean isFirstPrint = true;
+		
+		System.out.printf("%d = ", number);
+		for (long i = 2; i <= number; i = Utils.nextPrime(i)) {
+			long exp = Utils.getFactorExp(number, i);
+			if (exp == 0)
+				continue;
+			if (!isFirstPrint)
+				System.out.print(" * ");
+			printPrimeFactor(i, exp);
+			if (isFirstPrint)
+				isFirstPrint = false;
+			number /= Math.pow(i, exp);
+		}
+		System.out.println();
+	}
+	
+	public static void printPrimeFactor(long prime, long exp)
+	{
+		System.out.printf("%d^%d", prime, exp);
+	}
+}
+
 class Utils {
 	public static boolean isPrime(long number)
 	{
@@ -141,6 +180,17 @@ class Utils {
 		while (!isPrime(++number))
 			;
 		return number;
+	}
+	
+	public static long getFactorExp(long number, long factor)
+	{
+		long exp = 0;
+		
+		while (number % factor == 0) {
+			exp++;
+			number /= factor;
+		}
+		return exp;
 	}
 	
 	public static void printHelpMsg()
