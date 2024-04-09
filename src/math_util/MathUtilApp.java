@@ -35,7 +35,7 @@ class App {
 	public static void printMenu()
 	{
 		System.out.println("1) Check if an integer is a prime number.");
-		System.out.println("2) See an integer's factors.");
+		System.out.println("2) Display an integer's factors.");
 		System.out.println("0) Quit");
 	}
 }
