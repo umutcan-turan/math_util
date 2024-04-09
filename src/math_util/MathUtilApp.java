@@ -21,6 +21,8 @@ class App {
 				if (mode == 1)
 					IsPrimeApp.run(kb);
 				if (mode == 2)
+					NextPrimeApp.run(kb);
+				if (mode == 3)
 					FactorsApp.run(kb);
 			} while (mode != 0);
 		}
@@ -35,7 +37,8 @@ class App {
 	public static void printMenu()
 	{
 		System.out.println("1) Check if an integer is a prime number.");
-		System.out.println("2) Display an integer's factors.");
+		System.out.println("2) Get the smallest prime number greater than given integer.");
+		System.out.println("3) Display an integer's factors.");
 		System.out.println("0) Quit");
 	}
 }
@@ -56,6 +59,23 @@ class IsPrimeApp {
 			System.out.printf("> %d is a prime number.%n", number);
 		else
 			System.out.printf("> %d is not a prime number.%n", number);
+	}
+}
+
+class NextPrimeApp {
+	public static void run(java.util.Scanner kb)
+	{
+		long number;
+		
+		Utils.printHelpMsg();
+		while ((number = kb.nextLong()) != 0)
+			printNextPrime(number);
+	}
+	
+	public static void printNextPrime(long number)
+	{
+		System.out.printf("> %d is the smallest prime number greater than %d\n",
+				Utils.nextPrime(number), number);
 	}
 }
 
