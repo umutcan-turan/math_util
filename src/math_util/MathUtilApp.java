@@ -130,6 +130,6 @@ class Utils {
 	
 	public static void printFactor(long number, long factor)
 	{
-		System.out.printf("%d = %d * %d%n", number, factor, number / factor);
+		System.out.printf("> %d = %d * %d%n", number, factor, number / factor);
 	}
 }
