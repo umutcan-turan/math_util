@@ -33,3 +33,14 @@ class Utils {
 		return number;
 	}
 }
+
+class IOUtils {
+	public static long getLong()
+	{
+		// TODO: Properly handle creating and destroying objects
+		// TODO: Exception handling
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		long number = kb.nextLong();
+		return number;
+	}
+}
