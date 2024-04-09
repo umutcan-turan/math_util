@@ -3,7 +3,10 @@ package math_util;
 class MathUtilApp {
 	public static void main(String [] args)
 	{
-		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		long a = IOUtils.getLong(kb);
+		System.out.println(a);
+		kb.close();
 	}
 }
 
@@ -35,11 +38,10 @@ class Utils {
 }
 
 class IOUtils {
-	public static long getLong()
+	public static long getLong(java.util.Scanner kb)
 	{
 		// TODO: Properly handle creating and destroying objects
 		// TODO: Exception handling
-		java.util.Scanner kb = new java.util.Scanner(System.in);
 		long number = kb.nextLong();
 		return number;
 	}
