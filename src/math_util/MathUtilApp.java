@@ -15,6 +15,17 @@ class App {
 	}
 }
 
+class IsPrimeApp {
+	public static void run(java.util.Scanner kb)
+	{
+		long number;
+		
+		printHelpMsg();
+		while ((number = kb.nextLong())!= 0)
+			printResult(number, Utils.isPrime(number));
+	}
+}
+
 class Utils {
 	public static boolean isPrime(long number)
 	{
