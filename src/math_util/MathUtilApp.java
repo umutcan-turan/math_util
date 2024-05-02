@@ -13,22 +13,17 @@ class App {
 		// TODO: Exception handling on bad input
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 		printWelcomeMsg();
-		{
-			int mode;
-			do {
-				printMenu();
-				mode = kb.nextInt();
-				if (mode == 1)
-					IsPrimeApp.run(kb);
-				else if (mode == 2)
-					NextPrimeApp.run(kb);
-				else if (mode == 3)
-					FactorsApp.run(kb);
-				else if (mode == 4)
-					SquareFactorsApp.run(kb);
-				else if (mode == 5)
-					PrimeFactorsApp.run(kb);
-			} while (mode != 0);
+		boolean running = true;
+		while (running) {
+			printMenu();
+			switch (kb.nextInt()) {
+				case 1 -> IsPrimeApp.run(kb);
+				case 2 -> NextPrimeApp.run(kb);
+				case 3 -> FactorsApp.run(kb);
+				case 4 -> SquareFactorsApp.run(kb);
+				case 5 -> PrimeFactorsApp.run(kb);
+				default -> running = false;
+			}
 		}
 		kb.close();
 	}
