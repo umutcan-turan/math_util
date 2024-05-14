@@ -110,7 +110,7 @@ class SquareFactorsApp {
 	
 	public static void printSquareFactors(long number)
 	{
-		for (long i = 2; Math.pow(i, 4) <= number; i++)
+		for (long i = 2; i * i <= number; i++)
 			if (number % (i * i) == 0)
 				Utils.printFactor(number, i * i);
 	}
@@ -181,7 +181,7 @@ class Utils {
 	{
 		long exp = 0;
 		
-		while (number % factor == 0) {
+		while (number != 0 && number % factor == 0) {
 			exp++;
 			number /= factor;
 		}
